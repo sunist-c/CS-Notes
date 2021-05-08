@@ -1,0 +1,110 @@
+%!TEX encoding = UTF-8 Unicode
+\documentclass[a4paper,UTF8,heading=false,12pt]{article}
+\usepackage[heading = false]{ctex}
+\usepackage{graphicx}
+
+% package
+\usepackage{xeCJK}
+\usepackage{blindtext}
+\usepackage{palatino}
+% \usepackage{titlesec}
+\usepackage{needspace}
+\usepackage[toc,page]{appendix}
+\usepackage{metainfo}
+\usepackage[pagestyles,raggedright]{titlesec}
+\usepackage[xetex,colorlinks=false,hidelinks,pdfstartview=FitV]{hyperref}
+\usepackage{amsmath,amssymb}
+\usepackage{newpxtext,newpxmath}
+\usepackage{listings}
+\usepackage{fontspec}
+\usepackage{xcolor-material}
+\usepackage{enumitem}
+\usepackage{booktabs}
+% configuration
+\fontsize{16pt}{\baselineskip}
+\setmonofont{FiraCode Nerd Font}
+\CJKfamily{zhsong}
+%\addtolength{\parindent}{3cm}
+% code configuration
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+\lstdefinestyle{customc}{
+    belowcaptionskip=1\baselineskip,
+    breaklines=true,
+    frame=none,
+    xleftmargin=2em,
+    language=C++,
+    showstringspaces=false,
+    basicstyle=\footnotesize\ttfamily,
+    keywordstyle=\bfseries\color{green!40!black},
+    commentstyle=\itshape\color{purple!40!black},
+    numberstyle=\fontspec{FiraCode Nerd Font}\color{darkgray},
+    numbers=left,
+    identifierstyle=\color{blue},
+    stringstyle=\color{orange},
+}
+
+\usepackage[paperwidth=210mm, paperheight=297mm, margin=20 mm]{geometry}
+
+\newcommand\subtitle[1]{{\small #1}} 
+
+\begin{document}
+    \title{
+        数据库系统概论实验报告 \\
+        \subtitle{实验四： 两种方式向数据表添加、导入和导出数据}
+    }
+    \author{陈羿羽 \thanks{陈羿羽：西南大学2019级计算机科学与技术4班 - 222019603193014}}
+    \maketitle
+
+    \begin{abstract}
+        本次实验的目标为：
+        \begin{enumerate}
+            \item 使用数据库管理系统SQL Server 或者MySQL操作数据库。
+            \item 掌握创建、查看、修改和删除数据表的基本操作。
+        \end{enumerate}
+    \end{abstract}
+
+    \newpage
+
+    \section{实验准备}
+
+    \begin{enumerate}
+        \item 一台PC机或笔记本电脑
+        \item 能够上网
+    \end{enumerate}
+
+    \section{实验要求}
+
+    \begin{enumerate}
+        \item 查资料观看数据库管理系SQL Server 或者MySQL的数据表数据添加、导入和导出视频。
+        \item 使用视图方式和命令方式向数据表添加、导入和导出数据。
+        \item 学习了解数据表字段的基本类型。
+    \end{enumerate}
+
+    \section{实验内容}
+
+    \subsection{视图方式建立数据表}
+
+    向实验三创建的数据表添加数据:
+    \begin{enumerate}
+        \item 把学生成绩表和班级信息表的数据，自己各构造10条存在名字为“学生成绩.txt”和“班级信息.txt”的文本文件中，然后导入到数据库响应表中。（其中涉及姓名的信息要有一条和自己的姓名相关的信息）
+        \item 自己各构造10条学生交费信息表和学生学籍信息表的数据，存在名字为“学生交费信.xls”和“学生学籍.xls”的Excel文件中，然后导入到数据库响应表中。（其中涉及姓名的信息要有一条和自己的姓名相关的信息）
+        \item 在视图界面中，向课程信息表的添加10条数据，自己各构造。
+        \item 在视图界面中，导出数据表信息，包含Excel格式和TXT文件格式。
+    \end{enumerate}
+
+    \subsection{命令方式建立数据表}
+
+    向实验三教材第三章的例子用到的三张表添加数据:
+
+    \begin{enumerate}
+        \item 用Insert 命令向表（Course ）中插入书上教材第三章例子中的数据。
+        \item 将书上教材第三章例子中的表（Student）中存入“Student.xls”文件中，然后用命令导入数据库相应的表。
+        \item 将书上教材第三章例子中的表（SC）中存入“SC.txt”文件中，然后用命令导入数据库相应的表。
+        \item 以命令方式，导出数据表信息，包含Excel格式和TXT文件格式。
+    \end{enumerate}
+
+    \section{实验总结}
+\end{document}

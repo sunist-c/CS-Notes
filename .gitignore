@@ -1,0 +1,6 @@
+# TexLive
+__latexindent_temp.tex
+*.out
+*.aux
+*.log
+*.synctex.gz
