@@ -1,0 +1,10 @@
+114514	SunistC	201903	202001	DatabaseSystem	10086
+114515	Jecosine	201904	202001	DatabaseSystem	1919810
+114516	sdfa	201906	202001	DatabaseSystem	11451
+114517	asdfasd	201908	202001	DatabaseSystem	14514
+114518	weasdf	201910	202001	DatabaseSystem	19810
+114519	werqwe	201912	202001	DatabaseSystem	23333
+114520	asdfzxcv	201914	202001	DatabaseSystem	314159
+114521	asdfaxcvc	201916	202001	DatabaseSystem	271828
+114522	sadrqertr	201918	202001	DatabaseSystem	65535
+114523	dfgfdh	201920	202001	DatabaseSystem	255
