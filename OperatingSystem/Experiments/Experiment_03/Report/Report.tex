@@ -1,0 +1,116 @@
+% Attention: Font "FiraCode N(erd) F(ont)" have different name between macOS and windows
+
+%!TEX encoding = UTF-8 Unicode
+\documentclass[a4paper,UTF8,heading=false,12pt]{article}
+\usepackage[heading = false]{ctex}
+\usepackage{graphicx}
+
+% package
+\usepackage{xeCJK}
+\usepackage{blindtext}
+\usepackage{palatino}
+% \usepackage{titlesec}
+\usepackage{needspace}
+\usepackage[toc,page]{appendix}
+\usepackage{metainfo}
+\usepackage[pagestyles,raggedright]{titlesec}
+\usepackage[xetex,colorlinks=false,hidelinks,pdfstartview=FitV]{hyperref}
+\usepackage{amsmath,amssymb}
+\usepackage{newpxtext,newpxmath}
+\usepackage{listings}
+\usepackage{fontspec}
+\usepackage{xcolor-material}
+\usepackage{enumitem}
+\usepackage{booktabs}
+% configuration
+\fontsize{16pt}{\baselineskip}
+%\setmonofont{FiraCode NF}
+\CJKfamily{zhsong}
+%\addtolength{\parindent}{3cm}
+% code configuration
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+\lstdefinestyle{customc}{
+    belowcaptionskip=1\baselineskip,
+    breaklines=true,
+    frame=none,
+    xleftmargin=2em,
+    language=C++,
+    showstringspaces=false,
+    basicstyle=\footnotesize\ttfamily,
+    keywordstyle=\bfseries\color{green!40!black},
+    commentstyle=\itshape\color{purple!40!black},
+    numberstyle=\fontspec{FiraCode NF}\color{darkgray},
+    numbers=left,
+    identifierstyle=\color{blue},
+    stringstyle=\color{orange},
+}
+
+\usepackage[paperwidth=210mm, paperheight=297mm, margin=20 mm]{geometry}
+
+\newcommand\subtitle[1]{{\small #1}} 
+
+\begin{document}
+\title{
+    操作系统原理实验报告 \\
+    \subtitle{实验三： 页面置换算法模拟}
+}
+\author{陈羿羽 \thanks{陈羿羽：西南大学2019级计算机科学与技术4班 - 222019603193014}}
+\maketitle
+
+\begin{abstract}
+    本次实验的目标为：
+
+    设计一个虚拟存储区和内存工作区，编程序演示下属算法的具体实现过程，并计算访问命中率：
+
+    要求设计主界面以灵活选择某算法，且以下算法都要实现。
+
+    \begin{enumerate}
+        \item 最佳置换算法(OPT)：将以后永不使用的或许是在最长(未来)时间内不再被访问的页面换出。
+        \item 先进先出算法(FIFO)：淘汰最先进入内存的页面，即选择在内存中驻留时间最久的页面予以淘汰。
+        \item 最近最久未使用算法(LRU)：淘汰最近最久未被使用的页面。
+    \end{enumerate}
+\end{abstract}
+
+\newpage
+
+\section{实验要求}
+
+\begin{enumerate}
+    \item 用C语言编写OPT、FIFO、LRU置换算法。
+    \item 熟悉内存分页管理策略。
+    \item 了解页面置换的算法。
+    \item 掌握一般常用的调度算法。
+    \item 根据方案使算法得以模拟实现。
+    \item 锻炼知识的运用能力和实践能力。
+\end{enumerate}
+
+\section{实验报告}
+
+\subsection{算法源代码}
+
+\subsection{主要流程图}
+
+\subsection{运行结果截图}
+
+\subsection{实验总结}
+
+\section{基本思想}
+
+选择置换算法，先输入所有页面号，为系统分配物理块，依次进行置换：
+
+\subsection{OPT基本思想}
+
+是用一维数组page[pSIZE]存储页面号序列，memery[mSIZE]是存储装入物理块中的页面。数组next[mSIZE]记录物理块中对应页面的最后访问时间。每当发生缺页时，就从物理块中找出最后访问时间最大的页面，调出该页，换入所缺的页面。
+
+\subsection{FIFO基本思想}
+
+是用队列存储内存中的页面，队列的特点是先进先出，与该算法是一致的，所以每当发生缺页时，就从队头删除一页，而从队尾加入缺页。或者借助辅助数组time[mSIZE]记录物理块中对应页面的进入时间，每次需要置换时换出进入时间最小的页面。
+
+\subsection{LRU基本思想}
+
+是用一维数组page[pSIZE]存储页面号序列，memery[mSIZE]是存储装入物理块中的页面。数组flag[10]标记页面的访问时间。每当使用页面时，刷新访问时间。发生缺页时，就从物理块中页面标记最小的一页，调出该页，换入所缺的页面。
+
+\end{document}

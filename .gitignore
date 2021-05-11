@@ -4,3 +4,7 @@ __latexindent_temp.tex
 *.aux
 *.log
 *.synctex.gz
+
+# CLion and CMakefile
+.idea/
+cmake-build-debug/
