@@ -5,9 +5,11 @@
 #ifndef SUNISTOS_MESSAGE_H
 #define SUNISTOS_MESSAGE_H
 
-
-class message {
-
+struct message {
+    int msg_local_pid;
+    int msg_target_pid;
+    int msg_argc;
+    char** msg_argv;
 };
 
 

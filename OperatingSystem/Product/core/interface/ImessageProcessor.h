@@ -5,9 +5,12 @@
 #ifndef SUNISTOS_IMESSAGEPROCESSOR_H
 #define SUNISTOS_IMESSAGEPROCESSOR_H
 
+#include "../messagequeue/message.h"
 
 class ImessageProcessor {
-
+public:
+    virtual message OnRecive(message msg) = 0;
+    virtual message OnCall() = 0;
 };
 
 

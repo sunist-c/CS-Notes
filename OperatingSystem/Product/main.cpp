@@ -1,15 +1,17 @@
 #include <iostream>
-#include "tools/argumentParser.h"
-#include "tools/csvParser.h"
-#include "tools/errorParser.h"
-#include "libs/page.h"
+
+#include "libs/datastructures/template/t_hash_map.hpp"
+#include "libs/datastructures/template/t_list.hpp"
+#include "libs/utils/fileoperator/md5.h"
+#include "libs/datastructures/template/t_algorithm.hpp"
+#include "libs/datastructures/template//t_blocked_list.hpp"
+
+using namespace osl;
 
 int main(int args, char* argv[]) {
-    argumentParser parser(args, argv);
-    csvParser csvp("test.csv");
-    errorParser errs(&csvp);
 
-
-
-    return 0;
+    t_list<int> s;
+    s.AddBack(1);
+    s.AddBack(3);
+    std::cout << s[1] << std::endl;
 }
