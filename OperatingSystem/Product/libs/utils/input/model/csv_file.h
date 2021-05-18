@@ -6,7 +6,10 @@
 #define SUNISTOS_CSV_FILE_H
 
 #include <fstream>
+#include <string>
+#include <sstream>
 
+#include "datastructures/template/t_list.hpp"
 #include "datastructures/template/t_datatable.hpp"
 
 namespace osu {
@@ -19,7 +22,7 @@ namespace osu {
         csv_file(std::string path);
         csv_file(unsigned long column_count, std::string* column_names);
 
-        void LoadFile(std::string path);
+        void LoadFile(std::string path, bool has_title = false);
 
         osl_p::t_datatable_row<std::string>& operator[](unsigned long index) {
             return this->csv_data->operator[](index);
