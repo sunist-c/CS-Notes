@@ -1,17 +1,23 @@
 #include <iostream>
 
-#include "libs/datastructures/template/t_hash_map.hpp"
-#include "libs/datastructures/template/t_list.hpp"
-#include "libs/utils/fileoperator/md5.h"
-#include "libs/datastructures/template/t_algorithm.hpp"
-#include "libs/datastructures/template//t_blocked_list.hpp"
+#include "libs/utils/output/displayer.h"
 
-using namespace osl;
+using namespace osu;
 
 int main(int args, char* argv[]) {
-
-    t_list<int> s;
-    s.AddBack(1);
-    s.AddBack(3);
-    std::cout << s[1] << std::endl;
+    std::string name[] = {"col1", "col2", "col3"};
+    std::string value[] = {"13245", "0", "1"};
+    std::string value2[] = {"2", "1141514", "1919810"};
+    displayed_table t(3,name);
+    t.AddRow(value);
+    t.AddRow(value2);
+    t.AddRow(value);
+    t.AddRow(value2);
+    t.AddRow(value);
+    t.AddRow(value2);
+    t.AddRow(value);
+    t.AddRow(value2);
+    t.AddRow(value);
+    t.AddRow(value2);
+    t.display(center,' ');
 }

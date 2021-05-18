@@ -10,10 +10,6 @@ include_directories(bin)
 add_executable(
         SunistOS
         main.cpp
-        tools/csvParser.cpp
-        tools/csvParser.h
-        tools/errorParser.cpp
-        tools/errorParser.h
         core/interface/ImessageProcessor.h
         core/messagequeue/message.h
         libs/utils/output/argument_parser.cpp

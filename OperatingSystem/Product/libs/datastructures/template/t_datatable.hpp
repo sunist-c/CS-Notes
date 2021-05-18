@@ -16,7 +16,7 @@ namespace osl_p {
         t_list<t> data;
 
     public:
-        t_datatable_row(unsigned long column_count, t* data;) {
+        t_datatable_row(unsigned long column_count, t* data) {
             this->column_count = column_count;
             for (unsigned long i = 0; i < column_count; ++i) {
                 this->data.AddBack(data[i]);
@@ -49,20 +49,25 @@ namespace osl {
         unsigned long row_count;
         unsigned long column_count;
         t_list<std::string> column_names;
-        t_list<osl_p::t_datatable_row<t>> data;
 
     public:
+        t_list<osl_p::t_datatable_row<t>> data;
+
         t_datatable(std::string column_names ...) {
             row_count = 0;
             // todo: Finish args way to construct t_datatable
         }
 
         t_datatable(unsigned long columns_count, std::string* column_names) {
-            this->column_count = reinterpret_cast<unsigned long>(column_names);
+            this->column_count = columns_count;
             this->row_count = 0;
             for (unsigned long i = 0; i < columns_count; ++i) {
                 this->column_names.AddBack(column_names[i]);
             }
+        }
+
+        std::string GetColumnName(unsigned long column_index) {
+            return column_names[column_index];
         }
 
         unsigned long RowCount() {
