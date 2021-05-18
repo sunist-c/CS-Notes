@@ -1,23 +1,22 @@
 #include <iostream>
 
 #include "libs/utils/output/displayer.h"
+#include "libs/utils/input/model/csv_file.h"
+#include "libs/datastructures/template/t_datatable.hpp"
 
 using namespace osu;
 
 int main(int args, char* argv[]) {
-    std::string name[] = {"col1", "col2", "col3"};
-    std::string value[] = {"13245", "0", "1"};
-    std::string value2[] = {"2", "1141514", "1919810"};
-    displayed_table t(3,name);
-    t.AddRow(value);
-    t.AddRow(value2);
-    t.AddRow(value);
-    t.AddRow(value2);
-    t.AddRow(value);
-    t.AddRow(value2);
-    t.AddRow(value);
-    t.AddRow(value2);
-    t.AddRow(value);
-    t.AddRow(value2);
-    t.display(center,' ');
+    std::cout << "start" << std::endl;
+    std::string cols[] = {"id", "name"};
+
+    std::cout << "start" << std::endl;
+    csv_file s(2, cols);
+
+    std::cout << "start" << std::endl;
+    s.LoadFile("/Users/sunistchan/Desktop/test.csv");
+
+    std::cout << "start" << std::endl;
+    std::cout << s[1][0] << std::endl;
+
 }

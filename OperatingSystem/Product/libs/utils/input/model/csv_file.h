@@ -5,24 +5,25 @@
 #ifndef SUNISTOS_CSV_FILE_H
 #define SUNISTOS_CSV_FILE_H
 
-#include "iostream"
+#include <fstream>
 
-namespace osu_p {
-    class csv_line {
-    public:
-        std::string operator() (unsigned long columnIndex);
-    };
-}
+#include "datastructures/template/t_datatable.hpp"
 
 namespace osu {
-
     class csv_file {
+    private:
+        osl::t_datatable<std::string> *csv_data;
+
     public:
-        csv_file(std::string columnsName ...);
 
-        unsigned long get_columIndex(std::string columnName);
+        csv_file(std::string path);
+        csv_file(unsigned long column_count, std::string* column_names);
 
-        osu_p::csv_line operator[](unsigned long rowIndex);
+        void LoadFile(std::string path);
+
+        osl_p::t_datatable_row<std::string>& operator[](unsigned long index) {
+            return this->csv_data->operator[](index);
+        }
     };
 }
 

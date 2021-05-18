@@ -103,6 +103,10 @@ namespace osl {
 
         // todo: Delete Columns and Delete Rows
 
+        osl_p::t_datatable_row<t>& operator[](unsigned long index) {
+            return data[index];
+        }
+
     };
 }
 
