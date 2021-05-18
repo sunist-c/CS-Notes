@@ -29,6 +29,14 @@ public:
         this->data.push_front(data);
     }
 
+    void PopBack() {
+        this->data.pop_back();
+    }
+
+    void PopFront() {
+        this->data.pop_front();
+    }
+
     void Insert(t data, unsigned long index) {
         auto iter = this->data.begin();
         for (unsigned long i = 0; i < index; ++i) {
