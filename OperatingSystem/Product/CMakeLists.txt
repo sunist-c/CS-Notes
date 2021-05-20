@@ -18,13 +18,25 @@ add_executable(
         libs/utils/output/argument_generator.h
         core/memory/memory_controller.cpp
         core/memory/memory_controller.h
-        core/process/process_controller.cpp
-        core/process/process_controller.h
-        core/process/process.cpp
-        core/process/process.h
         core/memory/process_memory_controller.cpp
         core/memory/process_memory_controller.h
-        libs/utils/output/displayer.cpp libs/utils/output/displayer.h libs/utils/output/model/error.cpp libs/utils/output/model/error.h libs/utils/input/loader.cpp libs/utils/input/loader.h libs/utils/input/model/csv_file.cpp libs/utils/input/model/csv_file.h libs/datastructures/template/t_array.hpp libs/datastructures/template/t_rb_tree.hpp libs/datastructures/template/t_hash_map.hpp libs/datastructures/template/t_list.hpp libs/datastructures/template/t_algorithm.hpp libs/utils/fileoperator/md5.cpp libs/utils/fileoperator/md5.h libs/datastructures/template/t_blocked_list.hpp libs/datastructures/template/t_datatable.hpp)
+        libs/utils/output/displayer.cpp
+        libs/utils/output/displayer.h
+        libs/utils/output/model/error.cpp
+        libs/utils/output/model/error.h
+        libs/utils/input/loader.cpp
+        libs/utils/input/loader.h
+        libs/utils/input/model/csv_file.cpp
+        libs/utils/input/model/csv_file.h
+        libs/datastructures/template/t_array.hpp
+        libs/datastructures/template/t_rb_tree.hpp
+        libs/datastructures/template/t_hash_map.hpp
+        libs/datastructures/template/t_list.hpp
+        libs/datastructures/template/t_algorithm.hpp
+        libs/utils/fileoperator/md5.cpp
+        libs/utils/fileoperator/md5.h
+        libs/datastructures/template/t_blocked_list.hpp
+        libs/datastructures/template/t_datatable.hpp core/process/process.cpp core/process/process.h core/process/process_controller.cpp core/process/process_controller.h)
 
 add_executable(
         Experiment_01
