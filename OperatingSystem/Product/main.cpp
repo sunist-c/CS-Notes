@@ -12,6 +12,11 @@ using namespace osu;
 using namespace std;
 
 int main(int args, char* argv[]) {
-    csv_file s("C:\\Users\\cyy\\Desktop\\test.csv");
-    std::cout << s[0][1] << std::endl;
+    string names[] = {"id", "name"};
+    displayed_table s(2, names);
+    string values1[] = {"114514", "i love senrua forever"};
+    string values2[] = {"456456234362", "sikadi"};
+    s.AddRow(values1);
+    s.AddRow(values2);
+    s.display(center);
 }

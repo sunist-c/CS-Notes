@@ -17,7 +17,10 @@ namespace osc {
     };
 
     enum device_type {
-
+        IO,
+        Memory,
+        Disk,
+        Processor
     };
 
     class device_control_unit {
